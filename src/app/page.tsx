@@ -57,7 +57,10 @@ export default async function Home() {
 
             {/* 3D Mockup */}
             <div className="relative hidden lg:block perspective-1000">
-              <div className="transform rotate-y-12 rotate-z-6 hover:rotate-0 transition-transform duration-700 ease-out">
+              {/* Ambient Glow */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[650px] bg-purple-500/30 rounded-full blur-3xl -z-10" />
+
+              <div className="transform rotate-y-12 rotate-z-6 hover:rotate-0 transition-transform duration-700 ease-out animate-float">
                 <PhoneMockup />
               </div>
             </div>
