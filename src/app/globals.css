@@ -5,7 +5,6 @@
 @layer base {
   :root {
     --background: 210 20% 98%;
-    /* Light Gray #F7FAFC */
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -15,11 +14,9 @@
     --popover-foreground: 222.2 84% 4.9%;
 
     --primary: 257 94% 56%;
-    /* #6227F8 Purple */
     --primary-foreground: 210 40% 98%;
 
     --secondary: 26 99% 54%;
-    /* #FE7A15 Orange */
     --secondary-foreground: 210 40% 98%;
 
     --muted: 210 40% 96.1%;
@@ -36,7 +33,6 @@
     --ring: 257 94% 56%;
 
     --radius: 1.5rem;
-    /* Rounded-3xl match */
   }
 
   .dark {
@@ -87,5 +83,9 @@
 
   .text-gradient-primary {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--secondary))] to-[hsl(var(--primary))];
+  }
+
+  .bg-grid-white {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.1)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
   }
 }

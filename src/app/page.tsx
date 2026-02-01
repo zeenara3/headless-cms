@@ -15,19 +15,22 @@ export default async function Home() {
 
       {/* 1. Hero Section (Gradient + Mockup) */}
       <section className="relative pt-32 pb-48 overflow-hidden bg-gradient-to-br from-[#6227F8] via-[#8B5CF6] to-[#EC4899] text-white">
+        {/* Pattern Overlay */}
+        <div className="absolute inset-0 bg-grid-white opacity-10 pointer-events-none" />
+
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <span className="inline-block px-4 py-1 rounded-full bg-white/20 backdrop-blur-md text-sm font-semibold border border-white/30 animate-in fade-in slide-in-from-bottom-3 duration-500">
+            <div className="space-y-8">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-sm font-semibold border border-white/20 animate-in fade-in slide-in-from-bottom-3 duration-500 shadow-lg">
                 v2.0 Available Now
               </span>
-              <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight leading-tight drop-shadow-lg">
+              <h1 className="text-6xl lg:text-8xl font-black tracking-tighter leading-[0.9] drop-shadow-2xl">
                 The Ultimate <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-orange-400 to-red-500">
                   Headless CMS
                 </span>
               </h1>
-              <p className="text-lg text-white/90 max-w-xl leading-relaxed drop-shadow-md">
+              <p className="text-xl text-white/90 max-w-xl leading-relaxed drop-shadow-md font-medium">
                 Experience the power of WordPress with the speed of Next.js.
                 Premium features, unlimited customization, and blazing fast performance.
               </p>

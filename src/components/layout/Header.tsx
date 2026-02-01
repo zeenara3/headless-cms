@@ -2,20 +2,20 @@ import Link from 'next/link';
 
 export default function Header() {
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-gray-800 bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/80">
-            <div className="container mx-auto flex h-20 items-center justify-between px-6">
-                <Link href="/" className="flex items-center space-x-2">
-                    <span className="text-2xl font-bold tracking-tight text-white">iCraftThemes</span>
+        <header className="sticky top-0 z-50 w-full border-b border-gray-800/50 bg-gray-900/80 backdrop-blur-xl supports-[backdrop-filter]:bg-gray-900/60 transition-all duration-300">
+            <div className="container mx-auto flex h-20 items-center justify-between px-6 md:px-8">
+                <Link href="/" className="flex items-center space-x-2 group">
+                    <span className="text-2xl font-black tracking-tight text-white group-hover:text-primary transition-colors">iCraftThemes</span>
                 </Link>
 
-                <nav className="hidden md:flex items-center space-x-8 text-[17px] font-medium text-gray-300">
-                    <Link href="/" className="transition-colors hover:text-white">
+                <nav className="hidden md:flex items-center space-x-10 text-[16px] font-medium text-gray-300">
+                    <Link href="/" className="hover:text-white transition-colors">
                         Home
                     </Link>
-                    <Link href="/about" className="transition-colors hover:text-white">
+                    <Link href="/about" className="hover:text-white transition-colors">
                         About
                     </Link>
-                    <Link href="/contact" className="transition-colors hover:text-white">
+                    <Link href="/contact" className="hover:text-white transition-colors">
                         Contact
                     </Link>
                 </nav>
