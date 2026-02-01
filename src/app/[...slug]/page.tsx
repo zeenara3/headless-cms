@@ -56,44 +56,54 @@ export default async function DynamicPage({ params }: Props) {
 
     if (post) {
         return (
-            <article className="container mx-auto px-6">
-                <header className="mb-8 border-b pb-8">
-                    <div className="mb-6 text-center">
-                        <div className="mb-4 text-sm text-muted-foreground">
-                            <time dateTime={post.date}>
-                                {format(new Date(post.date), 'MMMM db, yyyy')}
-                            </time>
-                        </div>
-                        <h1 className="mb-6 text-4xl font-extrabold leading-tight lg:text-5xl" dangerouslySetInnerHTML={{ __html: post.title }} />
-                        {post.author?.node && (
-                            <div className="flex justify-center items-center space-x-2">
-                                {post.author.node.avatar?.url &&
-                                    <Image
-                                        src={post.author.node.avatar.url}
-                                        width={40}
-                                        height={40}
-                                        alt={post.author.node.name}
-                                        className="rounded-full"
-                                    />
-                                }
-                                <span className="font-medium">{post.author.node.name}</span>
-                            </div>
-                        )}
-                    </div>
+            <article className="min-h-screen pb-20">
+                <div className="relative h-[60vh] w-full overflow-hidden">
                     {post.featuredImage && (
-                        <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-muted shadow-lg">
+                        <>
                             <Image
                                 src={post.featuredImage.node.sourceUrl}
                                 alt={post.featuredImage.node.altText || post.title}
                                 fill
                                 className="object-cover"
                                 priority
-                                sizes="100vw"
                             />
-                        </div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+                        </>
                     )}
-                </header>
-                <PostBody content={post.content || ''} />
+                    <div className="absolute bottom-0 left-0 w-full p-6 md:p-12 lg:p-16">
+                        <div className="container mx-auto">
+                            <div className="max-w-3xl space-y-4 animate-in fade-in slide-in-from-bottom-5 duration-700">
+                                <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
+                                    <time dateTime={post.date} className="bg-background/80 backdrop-blur px-3 py-1 rounded-full border">
+                                        {format(new Date(post.date), 'MMMM db, yyyy')}
+                                    </time>
+                                </div>
+                                <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl drop-shadow-sm" dangerouslySetInnerHTML={{ __html: post.title }} />
+                                {post.author?.node && (
+                                    <div className="flex items-center space-x-3 pt-4">
+                                        {post.author.node.avatar?.url &&
+                                            <Image
+                                                src={post.author.node.avatar.url}
+                                                width={48}
+                                                height={48}
+                                                alt={post.author.node.name}
+                                                className="rounded-full border-2 border-background ring-2 ring-border"
+                                            />
+                                        }
+                                        <div className="flex flex-col">
+                                            <span className="font-semibold">{post.author.node.name}</span>
+                                            <span className="text-xs text-muted-foreground">Author</span>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="container mx-auto px-6 mt-12">
+                    <PostBody content={post.content || ''} />
+                </div>
             </article>
         );
     }

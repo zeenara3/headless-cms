@@ -10,13 +10,15 @@
     "pages:build": "npx @cloudflare/next-on-pages"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "graphql": "^16.10.0",
     "graphql-request": "^7.1.2",
     "html-react-parser": "^5.2.2",
     "next": "15.1.6",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "^1.13.0",
